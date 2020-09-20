@@ -85,8 +85,13 @@ string tob2(string str){
 
 string addPadding(string str){
 	string constant="11001";
-	while ((str.size()%6)!=0){
-		str=str+constant[(str.size()%6)-1];
+	if ((str.size()%6)==0){
+		str=str+"100110";
+	}
+	else {
+		while ((str.size()%6)!=0){
+			str=str+constant[(str.size()%6)-1];
+		}
 	}
 	return str;
 }
